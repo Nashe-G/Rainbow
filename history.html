@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Machines List
+{% endblock %}
+
+{% block main %}
+<h1 class = "display-3" >Search For Machine</h1>
+
+ <form action = "/History" method ="POST">
+     <!-- select only presents machine ID's already in the system -->
+     <select class = "form-control" name = "fanID" placeholder = "Machine ID">
+        {% for row in machines  %}
+            <option> {{row["ID"]}} </option>
+        {% endfor %}
+     </select>
+     <button class = "btn btn-primary" type = "submit">
+         Search
+     </button>
+ </form>
+{% endblock %}

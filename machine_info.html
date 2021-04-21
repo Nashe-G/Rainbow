@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Info Table
+{% endblock %}
+
+{% block main %}
+<table class = "table">
+         <tr>
+             <th> user </th>
+             <th> LAT </th>
+             <th> LONG </th>
+             <th> Time Stamp </th>
+         </tr>
+         {% for row in table %}
+             <tr>
+                {% for collumn in row  %}
+                    <th>{{ row[collumn] }}</th>
+                {% endfor %}
+            </tr>
+         {% endfor %}
+</table>
+{% endblock %}
